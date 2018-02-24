@@ -22,10 +22,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// need to create a heroku account for a postgresSQL database or MYSQL
-// massive(process.env.DB_CONNECTION).then(db => {
-//     app.set('db', db);
-// })
+massive(process.env.DB_CONNECTION).then(db => {
+    app.set('db', db);
+})
 
 passport.use(new Auth0strategy({
     domain: process.env.AUTH_DOMAIN,
@@ -35,12 +34,12 @@ passport.use(new Auth0strategy({
 }, function (accessToken, refreshToken, extraParams, profile, done) {
     const db = app.get('db');
     console.log(profile)
-    db.find_user([profile.identities[0].user_id]).then(user => {
+    db.auth.find_user([profile.identities[0].user_id]).then(user => {
         if(user[0]) {
             return done(null, user[0].id)
         } else {
-            const user = profile.json;
-            db.create_user([user.name, user.email, user.picture, user.identities[0].user_id])
+            const user = profile._json;
+            db.auth.create_user([user.name, user.email, user.picture, user.identities[0].user_id])
             .then(user => {
                 return done(null, user[0].id)
             })
@@ -71,7 +70,7 @@ passport.serializeUser((id, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    app.get('db').find_current_user([id])
+    app.get('db').auth.find_current_user([id])
     .then(user => {
         done(null, user[0]);
     })
