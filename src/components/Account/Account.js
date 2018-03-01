@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Nav from "../Nav/Nav";
 
 class Account extends Component{
     constructor() {
@@ -11,6 +12,7 @@ class Account extends Component{
     render() {
         return(
             <div>
+                <Nav />
                 Account Page
             </div>
         )

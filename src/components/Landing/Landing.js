@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Nav from "../Nav/Nav";
+import "./Landing.css"
 
 class Landing extends Component{
     constructor() {
@@ -11,7 +13,10 @@ class Landing extends Component{
     render() {
         return(
             <div>
+                <Nav />
+                <div id="Landing">
                 Landing Page
+                </div>
             </div>
         )
     }
