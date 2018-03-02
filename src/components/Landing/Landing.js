@@ -15,7 +15,9 @@ class Landing extends Component{
             <div>
                 <Nav />
                 <div id="Landing">
-                Landing Page
+                <div className="banner-container">
+                Landing
+                </div>
                 </div>
             </div>
         )
