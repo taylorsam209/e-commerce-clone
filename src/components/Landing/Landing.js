@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Nav from "../Nav/Nav";
-import "./Landing.css"
+import "./Landing.css";
 
-class Landing extends Component{
+class Landing extends Component {
     constructor() {
         super()
 
@@ -11,13 +11,12 @@ class Landing extends Component{
         }
     }
     render() {
-        return(
+        return (
             <div>
                 <Nav />
                 <div id="Landing">
-                <div className="banner-container">
-                Landing
-                </div>
+                    <div className="banner-container">
+                    </div>
                 </div>
             </div>
         )
