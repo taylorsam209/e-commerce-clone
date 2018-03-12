@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Nav from "../Nav/Nav";
 import "./Landing.css";
+import {getCurrentUser} from "../../ducks/reducer";
+import {connect} from 'react-redux';
 
 class Landing extends Component {
     constructor() {
@@ -9,6 +11,10 @@ class Landing extends Component {
         this.state = {
             input: ''
         }
+    }
+
+    componentDidMount() {
+        this.props.getCurrentUser();
     }
     render() {
         return (
@@ -23,4 +29,4 @@ class Landing extends Component {
     }
 }
 
-export default Landing;
+export default connect(null, {getCurrentUser})(Landing);
