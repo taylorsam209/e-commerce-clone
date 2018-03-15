@@ -13,7 +13,7 @@ class Landing extends Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getCurrentUser();
     }
     render() {

@@ -4,15 +4,15 @@ import { Switch, Route} from 'react-router-dom';
 import Landing from './components/Landing/Landing';
 import About from './components/About/About';
 import Account from './components/Account/Account';
-import Cart from './components/Account/Account';
+import Cart from './components/Cart/Cart';
 import Product from './components/Product/Product';
 
 export default (
     <Switch>
         <Route exact path='/' component={Landing} />
-        <Route path='/About' component={About} />
-        <Route path='/Account' component={Account} />
-        <Route path='/Cart' component={Cart} />
-        <Route path='/Product' component={Product} />
+        <Route path='/about' component={About} />
+        <Route path='/account' component={Account} />
+        <Route path='/cart' component={Cart} />
+        <Route path='/roduct' component={Product} />
     </Switch>
 )

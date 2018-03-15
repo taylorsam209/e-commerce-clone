@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import "../Nav/Nav";
+import Nav from "../Nav/Nav";
 
 class Cart extends Component{
     constructor() {

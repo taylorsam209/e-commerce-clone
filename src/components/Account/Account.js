@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Nav from "../Nav/Nav";
+import "./Account.css";
 
 class Account extends Component{
     constructor() {
@@ -13,7 +14,9 @@ class Account extends Component{
         return(
             <div>
                 <Nav />
+                <div id="Account">
                 Account Page
+                </div>
             </div>
         )
     }

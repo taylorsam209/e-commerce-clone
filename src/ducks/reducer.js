@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const initialState = {
-    user: {}
+    user: false
 }
 
 const FULFILLED = "_FULFILLED";
@@ -9,7 +9,7 @@ const GET_USER="GET_USER";
 
 export function getCurrentUser() {
     let user = axios.get('/auth/user').then(response => {
-        console.log(response.data);
+        console.log("reducer", response.data);
         return response.data
     })
     return {

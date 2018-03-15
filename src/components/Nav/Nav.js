@@ -4,20 +4,25 @@ import { Link } from "react-router-dom";
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faShoppingCart, faUserCircle, faSignOutAlt } from '@fortawesome/fontawesome-free-solid'
 import { connect } from "react-redux";
+import {getCurrentUser} from "../../ducks/reducer";
 
 class Nav extends Component {
     constructor() {
         super()
 
         this.state = {
-            yoyo: ""
+            user: false
         }
 
         this.handleLogin = this.handleLogin.bind(this);
     }
 
+    componentWillMount() {
+        this.props.getCurrentUser()
+    }
 
     handleLogin() {
+        console.log("handleLogin", this.props.user)
         if (!this.props.user) {
             return (
                 <ul>
@@ -34,7 +39,6 @@ class Nav extends Component {
                     <Link to="/account" className="link" ><li><FontAwesomeIcon icon={faUserCircle} /> Account</li></Link>
                     <Link to="/about" className="link"><li>About</li></Link>
                 </ul>
-
             )
     }
 
@@ -60,4 +64,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Nav);
+export default connect(mapStateToProps, {getCurrentUser})(Nav);
