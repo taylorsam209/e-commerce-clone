@@ -62,7 +62,7 @@ app.get('/auth/user', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, process.env.SUCCESS_REDIRECT)
+    res.redirect(302, process.env.LOGOUT_REDIRECT)
 })
 
 passport.serializeUser((id, done) => {
