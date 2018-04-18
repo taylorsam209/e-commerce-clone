@@ -1,5 +1,8 @@
 #Landing {
-  padding-top: 100px; }
+  height: 100%;
+  width: 100%; }
+  #Landing .landing-content {
+    padding-top: 200px; }
 
 .banner-container {
   background: url("../../assets/banner.jpg");
