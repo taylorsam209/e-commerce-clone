@@ -1,8 +1,12 @@
 #Landing {
   height: 100%;
   width: 100%; }
-  #Landing .landing-content {
-    padding-top: 200px; }
+
+.landing-content {
+  height: 100%;
+  width: 100%;
+  padding-top: 100px;
+  background-color: yellow; }
 
 .banner-container {
   background: url("../../assets/banner.jpg");

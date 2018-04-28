@@ -1,6 +1,7 @@
 #Nav {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  height: auto; }
 
 .nav-container {
   height: 60px;
