@@ -5,7 +5,8 @@ const express = require("express"),
     session = require("express-session"),
     massive = require('massive'),
     passport = require('passport'),
-    Auth0strategy = require('passport-auth0')
+    Auth0strategy = require('passport-auth0'),
+    productsController = require('./controllers/productsController')
 
 const app = express();
 
@@ -75,5 +76,8 @@ passport.deserializeUser((id, done) => {
         done(null, user[0]);
     })
 });
+
+//Endpoints
+app.get('/api/products', productsController.getProducts)
 
 app.listen(process.env.PORT, ()=> console.log(`Running on port ${process.env.PORT}`));
