@@ -11,7 +11,6 @@ const GET_PRODUCTS = 'GET_PRODUCTS';
 
 export function getCurrentUser() {
     let user = axios.get('/auth/user').then(response => {
-        console.log("reducer", response.data);
         return response.data
     })
     return {

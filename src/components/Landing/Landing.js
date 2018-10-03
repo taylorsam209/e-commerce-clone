@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 import "./Landing.css";
 import { getCurrentUser, getProducts } from "../../ducks/reducer";
 import { connect } from "react-redux";
-import axios from 'axios';
+import Products from './Products'
 
 class Landing extends Component {
   constructor() {
@@ -19,8 +19,20 @@ class Landing extends Component {
   // }
 
   componentWillMount(){
-    // axios.get('/api/products').then(resp => console.log(resp.data))
     this.props.getProducts()
+  }
+
+  renderProducts() {
+    const {products} = this.props;
+    return products.map((product, index) => {
+      return (
+        <div key={index}>
+          <h1>{product.name}</h1>
+          <h2>{product.color}</h2>
+          <h3>{product.price}</h3>
+        </div>
+      )
+    })
   }
 
   render() {
@@ -30,6 +42,7 @@ class Landing extends Component {
         <Nav />
         <div className="landing-content">
           <div className="banner-container" />
+          <Products products={this.props.products} />
         </div>
       </div>
     );

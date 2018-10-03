@@ -25,6 +25,8 @@ app.use(passport.session());
 
 massive(process.env.DB_CONNECTION).then(db => {
     app.set('db', db);
+    console.log('Connected to DB through Massive')
+    app.listen(process.env.PORT, ()=> console.log(`Running on port ${process.env.PORT}`));
 })
 
 passport.use(new Auth0strategy({
@@ -80,4 +82,4 @@ passport.deserializeUser((id, done) => {
 //Endpoints
 app.get('/api/products', productsController.getProducts)
 
-app.listen(process.env.PORT, ()=> console.log(`Running on port ${process.env.PORT}`));
+// app.listen(process.env.PORT, ()=> console.log(`Running on port ${process.env.PORT}`));
