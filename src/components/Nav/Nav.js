@@ -43,6 +43,7 @@ class Nav extends Component {
     }
 
     render() {
+        console.log(this.props.user)
         return (
             <div id="Nav">
                 <div className="top-bar">FREE SHIPPING ON ALL ORDERS</div>
