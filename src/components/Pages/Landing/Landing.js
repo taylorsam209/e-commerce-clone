@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Nav from "../Nav/Nav";
+import Nav from "../..//Nav/Nav";
 import "./Landing.css";
-import { getProducts, addToCart } from "../../ducks/reducer";
+import { getProducts, addToCart } from "../../../ducks/reducer";
 import { connect } from "react-redux";
 import Products from './Products'
 

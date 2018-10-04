@@ -9,7 +9,7 @@
 
 .banner-container {
   margin-top: 50px;
-  background: url("../../assets/banner.jpg");
+  background: url("../../../assets/banner.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

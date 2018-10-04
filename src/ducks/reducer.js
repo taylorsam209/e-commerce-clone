@@ -1,4 +1,6 @@
 import axios from "axios";
+import swal from 'sweetalert2'
+
 
 const initialState = {
     user: false,
@@ -31,6 +33,7 @@ export function getProducts() {
 
 export function addToCart(product) {
     console.log('product', product)
+    swal('Item added to cart', 'Feel free to continue shopping or view cart')
     return {
         type: ADD_TO_CART,
         payload: product

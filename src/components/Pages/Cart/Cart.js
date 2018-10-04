@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Nav from "../Nav/Nav";
+import Nav from "../../Nav/Nav";
 import {connect} from 'react-redux'
 
 class Cart extends Component{
